@@ -1,0 +1,17 @@
+@media (width <= 480px) {
+  .hide-tablet {
+    display: inherit;
+  }
+}
+
+@media (480px < width <= 1280px) {
+  .hide-tablet {
+    display: none;
+  }
+}
+
+@media (width >= 1280px) {
+  .hide-tablet {
+    display: none;
+  }
+}

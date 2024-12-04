@@ -1,0 +1,26 @@
+@use '../config/_variables' as var;
+
+.#{var.$ns}-accordion {
+  width: 100%;
+  border-bottom: 1px solid var(--text-caption);
+  .accordion-tab {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-top: 1px solid var(--text-caption);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+      background: #f7f7f7;
+    }
+  }
+
+  .accordion-detail {
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}

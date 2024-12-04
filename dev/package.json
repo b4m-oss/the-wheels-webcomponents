@@ -1,0 +1,26 @@
+{
+  "name": "dev",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint:html": "markuplint \"src/**/*.html\"",
+    "prettier:check": "prettier . --check",
+    "prettier:write": "prettier . --write"
+  },
+  "devDependencies": {
+    "@markuplint/nunjucks-parser": "^4.6.14",
+    "@vituum/vite-plugin-nunjucks": "^1.1.0",
+    "prettier": "^3.4.2",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.1",
+    "vituum": "^1.1.1"
+  },
+  "dependencies": {
+    "markuplint": "^4.11.4",
+    "reset-css": "^5.0.2"
+  }
+}

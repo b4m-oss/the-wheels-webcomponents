@@ -1,0 +1,84 @@
+@use '../config/_variables' as var;
+
+.#{var.$ns}-modal {
+  padding: 0;
+  &[open] {
+    position: fixed;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    max-width: 80dvw;
+    min-width: 48rem;
+    min-height: 32rem;
+    height: fit-content;
+    max-height: 80dvh;
+    border: 0;
+    border-radius: calc(var(--global-radius) * 1px);
+    background-color: var(--bg-page);
+
+    @media (width < 840px) {
+      min-width: 90dvw;
+    }
+  }
+  .modal-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--bg-page);
+    font-size: 2.2rem;
+    padding-top: 0.95em;
+    padding-bottom: 0.95em;
+    padding-left: 0.95em;
+    padding-right: 0.95em;
+    border-bottom: 1px solid var(--text-caption);
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  .modal-content {
+    flex: 1;
+    font-size: 1.6rem;
+    padding: 1.306em;
+    overflow: scroll;
+    margin-bottom: 0;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 40em;
+  }
+
+  .modal-footer {
+    display: sticky;
+    bottom: 0;
+    width: 100%;
+    background: var(--bg-page);
+    font-size: 1.6rem;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    padding-left: 1.306em;
+    padding-right: 1.306em;
+    border-top: 1px solid var(--text-caption);
+    text-align: right;
+
+    & .twls-button {
+      --fz: 13;
+      padding-top: calc(var(--fz) * 0.1rem * 0.95);
+      padding-bottom: calc(var(--fz) * 0.1rem * 0.95);
+      &:hover {
+        padding-top: calc(var(--fz) * 0.1rem * 0.95 - 1px);
+        padding-bottom: calc(var(--fz) * 0.1rem * 0.95 - 1px);
+      }
+    }
+  }
+  &::backdrop {
+    position: fixed;
+    background-color: var(--bg-button-main);
+    opacity: 0.8;
+  }
+}

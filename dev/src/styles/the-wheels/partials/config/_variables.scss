@@ -1,0 +1,44 @@
+// Name Scope
+$ns: twls;
+
+// Colors
+$bg-page: #efefef;
+$bg-highlight: #ffffff;
+$text-main: #494949;
+$text-caption: #747474;
+$text-highlight: #000000;
+$bg-button-main: #3b3b3b;
+$bg-button-optional: #e1e1e1;
+$bg-button-hover: #000000;
+$alert: #bc2f2f;
+
+// Related with Typographys
+$fz-root: 16;
+$heading-lh: 1.04;
+$body-text-lh: 1.7;
+$caption-lh: 1.3;
+
+// Related with Spacing
+$global-px: 100;
+$global-radius: 5;
+$global-radius-minor: 3;
+
+:root,
+:host {
+  --bg-page: #{$bg-page};
+  --bg-highlight: #{$bg-highlight};
+  --text-main: #{$text-main};
+  --text-caption: #{$text-caption};
+  --text-highlight: #{$text-highlight};
+  --bg-button-main: #{$bg-button-main};
+  --bg-button-optional: #{$bg-button-optional};
+  --bg-button-hover: #{$bg-button-hover};
+  --alert: #{$alert};
+  --fz-root: #{$fz-root};
+  --heading-lh: #{$heading-lh};
+  --body-text-lh: #{$body-text-lh};
+  --caption-lh: #{$caption-lh};
+  --global-px: #{$global-px};
+  --global-radius: #{$global-radius};
+  --global-radius-minor: #{$global-radius-minor};
+}

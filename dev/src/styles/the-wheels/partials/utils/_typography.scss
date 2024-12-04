@@ -1,0 +1,179 @@
+@use '../config/_variables' as var;
+@use '_functions' as func;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
+
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+body {
+  --fz-root: 18;
+  --fz: var(--fz);
+  @include func.numberToRemFz(var(--fz));
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  @media (width < 480px) {
+    --fz: 16;
+  }
+}
+
+// General Spacing
+
+p,
+ul,
+ol,
+dl,
+li,
+figure,
+table,
+blockquote,
+summary,
+details {
+  --mb: 30;
+  --fz: 18;
+  @include func.lineHeightNegatieMargin(var(--fz));
+  @include func.numberToRemFz(var(--fz));
+  line-height: var(--body-text-lh);
+  text-align: justify;
+
+  max-width: 40em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:is(summary),
+  &:is(details) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  @media (width < 480px) {
+    --fz: 16;
+    --mb: 20;
+  }
+}
+
+a {
+  color: var(--text-highlight);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    nav &,
+    button & {
+      text-decoration: none;
+    }
+  }
+}
+
+em {
+  color: var(--text-caption);
+  font-size: 75%;
+}
+
+strong {
+  color: var(--text-highlight);
+  font-weight: 700;
+}
+
+.#{var.$ns}-heading-1,
+h1 {
+  --fz: 54;
+  @include func.numberToRemFz(var(--fz));
+  font-weight: 700;
+  color: var(--text-highlight);
+  @media (width < 480px) {
+    --fz: 36;
+  }
+  & ~ * {
+    margin-top: 40px;
+  }
+}
+
+.#{var.$ns}-heading-2,
+h2 {
+  --fz: 42;
+  --mt: 85;
+  --mb: 32;
+  @include func.numberToRemFz(var(--fz));
+  line-height: var(--heading-lh);
+  font-weight: 700;
+  color: var(--text-caption);
+  @include func.lineHeightNegatieMargin(var(--fz));
+  margin-top: func.pxToRem(var(--mt));
+  margin-bottom: func.pxToRem(var(--mb));
+  @media (width < 480px) {
+    --fz: 28;
+    --mt: 62;
+    --mb: 12;
+    --heading-lh: 1.14;
+  }
+}
+
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h5 + h6,
+.#{var.$ns}-heading-1 + .#{var.$ns}-heading-2,
+.#{var.$ns}-heading-2 + .#{var.$ns}-heading-3,
+.#{var.$ns}-heading-3 + .#{var.$ns}-heading-4,
+.#{var.$ns}-heading-4 + .#{var.$ns}-heading-5,
+.#{var.$ns}-heading-5 + .#{var.$ns}-heading-6 {
+  margin-top: 1em;
+  @media (width < 480px) {
+    margin-top: 2.4rem;
+  }
+}
+
+* > h1:first-child,
+* > .#{var.$ns}-heading-1:first-child,
+* > h2:first-child,
+* > .#{var.$ns}-heading-2:first-child,
+* > h3:first-child,
+* > .#{var.$ns}-heading-3:first-child,
+* > h4:first-child,
+* > .#{var.$ns}-heading-4:first-child,
+* > h5:first-child,
+* > .#{var.$ns}-heading-5:first-child,
+* > h6:first-child,
+* > .#{var.$ns}-heading-6:first-child {
+  margin-top: 0;
+}
+
+h1 + *,
+h2 + *,
+h3 + *,
+h4 + *,
+h5 + *,
+h6 + *,
+.heading-1 + *,
+.heading-2 + *,
+.heading-3 + *,
+.heading-4 + *,
+.heading-5 + *,
+.heading-6 + * {
+  margin-top: 0;
+}
+
+main section,
+article section {
+  --mb: 95;
+  margin-bottom: func.pxToRem(var(--mb));
+}
+
+h1 + section,
+.#{var.$ns}-.heading-1 + section {
+  --mt: 36;
+  margin-top: func.pxToRem(var(--mt));
+  @media (width < 480px) {
+    --mt: 24;
+  }
+}

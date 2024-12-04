@@ -1,0 +1,48 @@
+{% extends "layouts/_default.njk" %}
+
+{% block content %}
+
+<h1>Components</h1>
+<twls-content-section headingTitle="Modal">
+    <div slot="content">
+        <twls-modal>
+            <slot name="header">
+                <p>Here is Header section.</p>
+            </slot>
+            <slot name="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </slot>
+            <slot name="footer">
+                <button
+                    type="button"
+                    class="twls-button ghost twls-modal-closer"
+                >
+                    Close
+                </button>
+            </slot>
+            <slot name="initiater">
+              <button type="button" class="twls-button twls-modal-opener">Open Modal</button>
+            </slot>
+        </twls-modal>
+    </div>
+</twls-content-section>
+
+<!-- <twls-content-section headingTitle="Accordion">
+    <twls-accordion slot="content">
+        <span slot="tab">Here is Tab section</span>
+        <slot name="content">
+        <p>Here is Content section</p>
+        </slot>
+    </twls-accordion>
+</twls> -->
+
+<twls-content-section headingTitle="Icon">
+  <slot name="content">
+    <twls-icon-arrow width="24" height="28" direction="left" />
+    <twls-icon-arrow width="24" height="28" direction="up" />
+    <twls-icon-arrow width="24" height="28" direction="bottom" />
+    <twls-icon-arrow width="24" height="28" direction="right" />
+  </slot>
+</twls-content-section>
+
+{% endblock %}

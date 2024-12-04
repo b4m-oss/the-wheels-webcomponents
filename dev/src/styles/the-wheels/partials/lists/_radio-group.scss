@@ -1,0 +1,64 @@
+@use '../config/_variables' as var;
+
+.#{var.$ns}-radio-group {
+  width: calc(100% - 30px);
+  display: flex;
+  flex-flow: row;
+  gap: 3px;
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  .radio-group-item {
+    display: block;
+    width: calc(50% - 0.5px);
+    border: 1px solid var(--text-caption);
+    color: var(--text-caption);
+    text-align: center;
+    font-size: 14px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-left: 0;
+    border-right: 0;
+    cursor: pointer;
+    &:has(*:checked) {
+      background: var(--bg-button-main);
+      border-color: var(--bg-button-main);
+      color: #fff;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+    & input[type='radio'] {
+      // display: none;
+      opacity: 0;
+      position: absolute;
+    }
+    &:has(*:focus) {
+      &:after {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        z-index: -30;
+        outline-width: 2px;
+        outline-style: solid;
+        outline-color: var(--text-highlight);
+        outline-offset: 0.5em;
+        border-radius: calc((var(--global-radius-minor) - 1) * 1px);
+      }
+    }
+  }
+  & > *:first-child {
+    border-left: 1px solid var(--text-caption);
+    border-radius: calc(var(--global-radius-minor) * 1px) 0 0 calc(var(--global-radius-minor) * 1px);
+  }
+
+  & > *:last-child {
+    border-radius: 0 calc(var(--global-radius-minor) * 1px) calc(var(--global-radius-minor) * 1px) 0;
+    border-right: 1px solid var(--text-caption);
+  }
+}

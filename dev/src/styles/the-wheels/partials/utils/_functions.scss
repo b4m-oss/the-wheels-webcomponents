@@ -1,0 +1,51 @@
+/*
+ * Function
+ * ピクセルからremを算出
+ * @param $px number
+ */
+
+@function pxToRem($px) {
+  @return calc($px / 10 * 1rem);
+}
+
+/* 
+ * Mixin
+ * ピクセル数分の数値から、remに。
+ * @param $fz number 
+ */
+@mixin numberToRemFz($fz) {
+  // TODO: numberToRemFzからpxToRemFzに変えたい…
+  font-size: pxToRem($fz);
+}
+
+/* 
+ * Mixin
+ * line-height分の上下をネガティブマージンで相殺
+ * @param $fz number 
+ */
+
+@mixin lineHeightNegatieMargin($fz) {
+  margin-top: calc($fz * ((1 - var(--body-text-lh) / 2)) * -1 * 1px);
+  margin-bottom: calc($fz * ((1 - var(--body-text-lh) / 2)) * -1 * 1px + (var(--mb) * 1px));
+}
+
+/*
+ * Mixin
+ * 斜線背景
+ */
+
+@mixin bgStripe(
+  $deg: -45deg,
+  $color1: #b2b2b2,
+  $color2: transparent,
+  $lineWidth: 2px,
+  $span: 15px
+) {
+  background: repeating-linear-gradient(
+    $deg,
+    $color1,
+    $color1 $lineWidth,
+    $color2 $lineWidth,
+    $color2 $span
+  );
+}
