@@ -1,4 +1,3 @@
-import { getSlot } from "../utils/getSlot"
 export class TwlsCookieConcensas extends HTMLElement {
 
   constructor() {
