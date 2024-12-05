@@ -1,23 +1,39 @@
 {
-  "name": "dev",
+  "name": "@b4m-oss/the-wheels",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.8.2",
   "type": "module",
+  "main": "dist/the-wheels.umd.js",
+  "module": "dist/the-wheels.es.js",
+  "types": "dist/the-wheels.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "deploy": "npm run build && rm -rf dist/**/*.html && npm publish",
     "lint:html": "markuplint \"src/**/*.html\"",
+    "lint:css": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:css:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+    "lint:js": "eslint \"src/**/*.{js,ts}\"",
+    "lint:js:fix": "eslint \"src/**/*.{js,ts}\" --fix",
     "prettier:check": "prettier . --check",
     "prettier:write": "prettier . --write"
   },
   "devDependencies": {
     "@markuplint/nunjucks-parser": "^4.6.14",
     "@vituum/vite-plugin-nunjucks": "^1.1.0",
+    "autoprefixer": "^10.4.20",
     "prettier": "^3.4.2",
     "sass-embedded": "^1.82.0",
+    "stylelint": "^16.11.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-scss": "^6.10.0",
     "typescript": "~5.6.2",
     "vite": "^6.0.1",
+    "vite-plugin-dts": "^4.3.0",
     "vituum": "^1.1.1"
   },
   "dependencies": {
