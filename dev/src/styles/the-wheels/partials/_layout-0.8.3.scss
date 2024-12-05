@@ -1,0 +1,36 @@
+@use 'config/_variables' as var;
+@use 'utils/_functions' as func;
+
+.#{var.$ns}-screenContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr 3rem;
+  min-height: 100dvh;
+  margin: 0 auto;
+
+  > .#{var.$ns}-content {
+    padding-top: 7rem; 
+    padding-bottom: 7rem;
+  }
+
+  @media (width < 767px) {
+    width: 100%;
+    > .#{var.$ns}-content {
+      padding-top: 4rem; 
+      padding-bottom: 4rem;
+    }
+  }
+
+  @media (768px < width < 1280px) {
+    width: calc((1180 / 1280) * 100%);
+  }
+
+  @media (1281px < width < 1680px) {
+    width: calc((1560 / 1680) * 100%);
+  }
+
+  @media (1681px < width) {
+    width: calc((1920 / 2560) * 100%);
+  }
+
+}

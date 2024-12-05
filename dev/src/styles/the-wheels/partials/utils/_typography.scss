@@ -16,7 +16,9 @@
 body {
   --fz-root: 18;
   --fz: var(--fz);
-  @include func.numberToRemFz(var(--fz));
+  --lh: var(--lh);
+  line-height: var(--lh);
+  font-size: calc(var(--fz) / 10 * 1rem);
   background-color: var(--bg-page);
   color: var(--text-main);
   font-family: 'Inter', 'Noto Sans JP', sans-serif;
@@ -59,6 +61,7 @@ details {
   @media (width < 480px) {
     --fz: 16;
     --mb: 20;
+    --lh: 1.2;
   }
 }
 

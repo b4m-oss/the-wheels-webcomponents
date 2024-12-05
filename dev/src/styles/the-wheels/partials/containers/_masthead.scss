@@ -1,0 +1,50 @@
+@use '../config/variables' as var;
+
+.#{var.$ns}-masthead {
+  display: flex;
+  flex-flow: row;
+  justify-content: start;
+  align-items: center;
+  gap: 4.5rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  font-size: calc(var(--fz) / 10 * 1rem);
+  border-bottom: 1px solid var(--text-caption);
+  @media (width < 1024px) {
+    flex-flow: column;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  &-title {
+    --fz: 58;
+    --lh: 0.78;
+    font-weight: 700;
+    line-height: var(--lh);
+    margin-top: calc((var(--fz) / 10 * 1rem * (1 - var(--lh)) / 4) * -1);
+    margin-bottom: calc((var(--fz) / 10 * 1rem * (1 - var(--lh)) / 4) * -1);
+    color: var(--text-highlight);
+    
+  }
+
+  &-caption {
+    --fz: 15;
+    color: var(--text-caption);
+  }
+}
+
+@media (width < 768px) {
+  .#{var.$ns}-masthead { 
+    padding-top: 2.5rem;
+    padding-bottom: 2.25rem;
+    gap: 1.2rem;
+    width: calc(100% - 45px);
+    margin: 0 auto;
+    &-title {
+      --fz: 42;
+    }
+    &-caption {
+      --fz: 13;
+    }
+  }    
+}

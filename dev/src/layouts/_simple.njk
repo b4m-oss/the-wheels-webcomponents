@@ -10,21 +10,13 @@
     {% endblock %}
 </head>
 <body>
-  <div class="twls-screenContainer">
-    <header class="twls-globalHeader">
-      {% block header %}
-      {% include "../components/global-header.njk" %}
+  <div class="screenContainer">
+    <main class="screen">
+      {% block content %}
       {% endblock %}
-    </header>
-    <div class="twls-content">
-      <main class="main">
-        {% block content %}
-        {% endblock %}
-      </main>
-    </div>
+    </main>
     <footer class="global-footer">
-      {% block footer %}
-      {% include "../components/global-footer.njk" %}
+      {% block content %}
       {% endblock %}
     </footer>
   </div>

@@ -30,30 +30,30 @@ html {
     min-width: 34rem;
   }
 }
-.#{var.$ns}-container {
-  width: 118rem;
+// .#{var.$ns}-container {
+  // width: 118rem;
   // padding-left: 5rem;
   // padding-right: 5rem;
-  margin: 0 auto;
+  // margin: 0 auto;
 
-  &.horizontal {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-  }
-  @media (480px < width < 1200px) {
-    width: 100%;
-    padding-left: 8.25%;
-    padding-right: 8.25%;
-  }
+  // &.horizontal {
+  //   display: flex;
+  //   flex-flow: row;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+  // @media (480px < width < 1200px) {
+  //   width: 100%;
+  //   padding-left: 8.25%;
+  //   padding-right: 8.25%;
+  // }
 
-  @media (width < 480px) {
-    width: 100%;
-    padding-left: 6.25%;
-    padding-right: 6.25%;
-  }
-}
+  // @media (width < 480px) {
+  //   width: 100%;
+  //   padding-left: 6.25%;
+  //   padding-right: 6.25%;
+  // }
+// }
 @media (1280px <= width) {
   .layout-container {
     width: 118rem;
