@@ -3,8 +3,7 @@
   "private": true,
   "version": "0.8.2",
   "type": "module",
-  "main": "dist/the-wheels.umd.js",
-  "module": "dist/the-wheels.es.js",
+  "main": "dist/main.js",
   "types": "dist/the-wheels.d.ts",
   "files": [
     "dist/**/*"

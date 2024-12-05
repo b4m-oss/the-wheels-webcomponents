@@ -11,6 +11,7 @@
 * {
   line-height: 1;
   box-sizing: border-box;
+  font-size: calc(var(--fz) / 10 * 1rem);
 }
 
 body {
@@ -27,6 +28,19 @@ body {
   }
 }
 
+button {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+b {
+  font-weight: 700;
+}
+
 // General Spacing
 
 p,
@@ -39,10 +53,17 @@ table,
 blockquote,
 summary,
 details {
-  --mb: 30;
+  --mb: calc((var(--fz) * (var(--lh) - 1) / 8) * (-1px));
+  --mt: calc((var(--fz) * (var(--lh) - 1) / 8) * (-1px));
   --fz: 18;
-  @include func.lineHeightNegatieMargin(var(--fz));
-  @include func.numberToRemFz(var(--fz));
+  --lh: 1.7;
+  // @include func.lineHeightNegatieMargin(var(--fz));
+  // @include func.numberToRemFz(var(--fz));
+  font-size: calc(var(--fz) / 10 * 1rem);
+
+  margin-top: var(--mt);
+  margin-bottom: calc((var(--mb) + (var(--fz) / 30) * 1em));
+
   line-height: var(--body-text-lh);
   text-align: justify;
 

@@ -1,0 +1,34 @@
+.twls-card {
+  border-radius: calc(var(--global-radius) * 1px);
+  border: 1px solid var(--text-caption);
+  position: relative;
+  width: fit-content;
+
+  &-header {
+    border-bottom: 1px solid var(--text-caption);
+    padding: 2em 3em;
+  }
+
+  &-content {
+    padding: 2em 3em;
+  }
+
+  &-footer {
+    border-top: 1px solid var(--text-caption);
+    padding: 2em 3em;
+    display: flex;
+    flex-flow: row;
+    gap: 1rem;
+    justify-content: end;
+  }
+
+  &-closer-container {
+    position: relative;
+  }
+
+  // &-closer {
+  //   position: absolute;
+  //   right: 0;
+  //   top: -4rem;
+  // }
+}

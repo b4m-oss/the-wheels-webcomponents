@@ -22,18 +22,20 @@ export default defineConfig({
     lib: {
       entry: 'src/main.ts', // ライブラリのエントリーポイント
       name: 'TheWheels',
-      fileName: (format) => `my-library.${format}.js`, // 出力ファイル名
+      formats: ['es'],
+      fileName: (format) => `the-wheels.${format}.js`, // 出力ファイル名
     },
     rollupOptions: {
       external: ['reset-css'], // 外部依存関係
       input: ["./src/pages/**/*.njk"], // Nunjucksテンプレートを入力
       output: {
-        assetFileNames: 'style.css',
+        assetFileNames: '[name].[ext]',
+        chunkFileNames: `[name].js`,
         entryFileNames: '[name].js',
+        // inlineDynamicImports: false,
       },
     },
     outDir: 'dist', // 出力ディレクトリ
-    emptyOutDir: true, // ビルド後に出力ディレクトリを空にする
+    emptyOutDir: false, // ビルド後に出力ディレクトリを空にする
   },
- 
 });

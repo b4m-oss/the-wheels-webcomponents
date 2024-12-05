@@ -5,6 +5,22 @@
 <div class="twls-container">
   <h2>Content</h2>
   <p>content goes here</p>
+  <twls-card>
+    <slot name="header">
+      <p>cardです。ここがtitle</p>
+    </slot>
+    <slot name="content">
+      <p>cardの内容です。コンテント。</p>
+    </slot>
+    <slot name="footer">
+      <p>フッターです</p>
+    </slot>
+    <slot name="closer">
+      <button type="button" class="twls-card-closer">閉じる</button>
+    </slot>
+  </twls-card>
+  <twls-cookie-concensas></twls-cookie-concensas>
+  
 </div>
 
 
